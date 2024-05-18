@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         Google toplinks shortcut
 // @namespace    https://arsh.zip
-// @version      2024-05-17
+// @version      2024-05-19
 // @description  press 1, 2 or 3 to open links on google serp
 // @author       arsh.zip
 // @match        https://www.google.com/search*
 // @match        https://www.youtube.com/results*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @grant        none
+// @license      MIT
+// @run-at       document-body
 // ==/UserScript==
 
 (function () {
