@@ -4,8 +4,8 @@
 // @version      2024-05-19
 // @description  press 1, 2 or 3 to open links on google serp
 // @author       arsh.zip
-// @match        https://www.google.com/search*
-// @match        https://www.youtube.com/results*
+// @match        https://www.google.com/*
+// @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @grant        none
 // @license      MIT
@@ -46,9 +46,10 @@
       return;
     }
     let c;
-    if (window.location.hostname.includes("youtube.com")) {
+    // yt does client side navigation sometimes - https://stackoverflow.com/a/34053280 
+    if (window.location.hostname.includes("youtube.com") && window.location.pathname === "/results") {
       c = Array.from(document.querySelectorAll("a#video-title, span#video-title")).map((elem) => getLink(elem));
-    } else if (window.location.hostname.includes("google.com")) {
+    } else if (window.location.hostname.includes("google.com") && window.location.pathname === "/search") {
       c = Array.from(document.querySelectorAll(".notranslate"))
         .filter((elem) => isVisible(elem))
         .map((elem) => getLink(elem));
