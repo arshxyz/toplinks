@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google toplinks shortcut
 // @namespace    https://arsh.zip
-// @version      2024-05-19
+// @version      2024-05-20
 // @description  press 1, 2 or 3 to open links on google serp
 // @author       arsh.zip
 // @match        https://www.google.com/*
@@ -58,7 +58,7 @@
     if (e.shiftKey) {
       url && window.open(url);
     } else {
-      url && location.href = url;
+      url && (location.href = url);
     }
   });
 })();
