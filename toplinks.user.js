@@ -56,9 +56,9 @@
     }
     let url = c[getDigit(e)];
     if (e.shiftKey) {
-      window.open(url);
+      url && window.open(url);
     } else {
-      location.href = url;
+      url && location.href = url;
     }
   });
 })();
